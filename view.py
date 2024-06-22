@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
-# Ensure the correct backend is used
-plt.switch_backend('TkAgg')  # You can try 'Agg', 'TkAgg', 'Qt5Agg', etc.
+# Use the 'Agg' backend for rendering plots in a headless environment
+plt.switch_backend('Agg')
 
 def print_ip_address(ip_address):
     print(f"Your IP address is: {ip_address}")
@@ -27,6 +27,7 @@ def plot_latency(hops, latencies):
     plt.xlabel('Hop')
     plt.ylabel('Latency (ms)')
     plt.grid(True)
+    plt.savefig('latency_plot.png')  # Save the plot to a file
     plt.show()  # Ensure the plot is displayed
 
 # Ensure interactive mode is enabled
