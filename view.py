@@ -1,5 +1,7 @@
-
 import matplotlib.pyplot as plt
+
+# Ensure the correct backend is used
+plt.switch_backend('TkAgg')  # You can try 'Agg', 'TkAgg', 'Qt5Agg', etc.
 
 def print_ip_address(ip_address):
     print(f"Your IP address is: {ip_address}")
@@ -25,4 +27,7 @@ def plot_latency(hops, latencies):
     plt.xlabel('Hop')
     plt.ylabel('Latency (ms)')
     plt.grid(True)
-    plt.show()
+    plt.show()  # Ensure the plot is displayed
+
+# Ensure interactive mode is enabled
+plt.ion()
